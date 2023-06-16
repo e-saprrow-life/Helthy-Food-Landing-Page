@@ -1,0 +1,180 @@
+/*=== Не изменять: ==================================================================================================================================================*/
+.svg-icons-set {// Блок со всеми svg иконками. Cкрыт за пределами документа
+    position: fixed;
+    top: 0;
+    left: -1000%;
+}
+/*= / Не изменять: ==================================================================================================================================================*/
+html {
+    scroll-behavior: $scrollBehavior;
+    //@include responsiveValue(font-size, 16, 14, 3);
+}
+
+body { 
+    color: $mainColor;
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    background-color: #fafafa;
+    &._lock {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+/*
+    // Параметры скроллбара для этого элемента 
+    &::-webkit-scrollbar {  // Панель прокрутки
+        width: 20px;
+        background-color: red;
+        display: none;
+        
+    }
+    &::-webkit-scrollbar-button { // Кнопки навигации 
+        background-color: green;
+    }
+    &::-webkit-scrollbar-track { // Второй слой панели прокрутки 
+        background-color: blue;
+    }
+    &::-webkit-scrollbar-track-piece { // Третий слой панели прокрутки
+        background-color: yellow;
+    }
+    &::-webkit-scrollbar-thumb { //Ползунок 
+        background-color: orange;
+    }
+    &::-webkit-scrollbar-corner { // Правый нижний угол блока с прокруткий (когда вкл ось прокрутки X и Y) 
+        background-color: violet;
+    }
+    &::-webkit-resizer { // ??? Поискать в нете
+        background-color: cyan;
+    }*/
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: $minWidth + px;
+    max-width: $maxWidth + px;
+    min-height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+
+.container {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    max-width: $containerMaxWidth + px;
+    @media (max-width: $md1+px) {
+        max-width: 970px;
+    }
+    @media (max-width: $md2+px) {
+        max-width: 750px;
+    }
+    @media (max-width: $md3+px) {
+        max-width: none;
+        padding: 0 $containerPadding + px;
+    }
+}
+
+.header {
+    flex: 0 0 auto;
+}
+
+.page {
+    flex: 1 1 auto;
+}
+
+.footer {
+    flex: 0 0 auto;
+}
+
+/* ============================================================================= */
+/* === Библиотека классов ====================================================== */
+
+.pr {
+    position: relative;
+}
+
+
+.ri {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    img {
+        height: 100%;
+        width: 100%;
+    }
+
+    &_contain {
+        img {
+            object-fit: contain;
+        }
+    }
+    &_cover {
+        img {
+            object-fit: cover;
+        }
+    }
+    &_center {
+        img {
+            object-position: center;
+        }
+    }
+
+    &_top{
+        img {
+            object-position: top;
+        }
+    }
+
+    &_left {
+        img {
+            object-position: left;
+        }
+    }
+
+    &_right {
+        img {
+            object-position: right;
+        }
+    }
+
+    &_bottom {
+        img {
+            object-position: bottom;
+        }
+    }
+
+    &_right-top {
+        img {
+            object-position: right top;
+        }
+    }
+
+    &_right-bottom {
+        img {
+            object-position: right bottom;
+        }
+    }
+
+    &_left-top {
+        img {
+            object-position: left top;
+        }
+    }
+
+    &_left-bottom {
+        img {
+            object-position: left bottom;
+        }
+    }
+}
+/* === Библиотека классов ================================================ */
+/* ======================================================================= */

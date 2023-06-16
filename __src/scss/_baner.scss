@@ -1,0 +1,176 @@
+.baner {
+    min-height: 500px;
+    height: 100vh;
+    max-height: 1080px;
+    // .baner__inner
+    &__inner {
+        display: flex;
+        align-items: center;
+        min-height: 100%;
+        @media (max-width: $md3 + px) {
+            position: relative;
+        }
+    }
+
+    // .baner__content
+    &__content {
+        flex: 0 0 $col6;
+        h1 {// main title
+            font: {
+                family: $fontFamily2;
+                size: rem(49);
+                weight: 700;
+            }
+            @include responsiveValue(margin-bottom, 42, 25, 3);
+            @media (max-width: $md2 + px) {
+                font-size: rem(42);
+            }
+            @media (max-width: $md3 + px) {
+                font-size: rem(36);
+            }
+        }
+
+        p {
+            font-weight: 400;
+            color: $textCol1;
+            line-height: 1.5;
+            @include responsiveValue(margin-bottom, 50, 25, 3);
+        }
+
+        @media (max-width: $md3 + px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+        }
+    }
+
+    // .baner__content-btns
+    &__content-btns {
+        .btn:first-child {
+            @include responsiveValue(margin-right, 30, 15, 3);
+        }
+        @media (max-width: $md3 + px) {
+            text-align: center;
+        }
+    }
+
+    // .baner__image
+    &__image {
+        flex: 0 0 $col6;
+        position: relative;
+        display: flex;
+        align-items: center;
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f9e1c7+0,ffffff+66 */
+        background: #f9e1c7; /* Old browsers */
+        background: -moz-radial-gradient(center, ellipse cover,  #f9e1c7 0%, #ffffff 66%); /* FF3.6-15 */
+        background: -webkit-radial-gradient(center, ellipse cover,  #f9e1c7 0%,#ffffff 66%); /* Chrome10-25,Safari5.1-6 */
+        background: radial-gradient(ellipse at center,  #f9e1c7 0%,#ffffff 66%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9e1c7', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        @media (max-width: $md3 + px) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: -15px;
+                height: 100%;
+                width: calc(100% + 30px);
+                background-color: rgba(179, 179, 179, 0.7);
+                z-index: 1;
+            }
+        }
+    }
+}
+
+.baner-anim {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    transform: scale(1.05);
+    // .baner-anim__lay-list
+    &__lay-list {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transform: translateY(20%) rotate(15deg);
+        transform-origin: 0 0;
+    }
+
+    // .baner-anim__lay
+    &__lay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+        // .baner-anim__lay_1
+        &_1 {
+            
+            transform: translateY(0);
+        }
+
+        // .baner-anim__lay_2
+        &_2 {
+            top: -5%;
+            transform: translateY(8%);
+        }
+
+        // .baner-anim__lay_3
+        &_3 {
+            top: -10%;
+            transform: translateY(10%);
+        }
+
+        // .baner-anim__lay_4
+        &_4 {
+            top: -13%;
+            transform: translateY(20%);
+        }
+
+        // .baner-anim__lay_5
+        &_5 {
+            top: -16%;
+            transform: translateY(45%);
+        }
+
+        // .baner-anim__lay_6
+        &_6 {
+            top: -20%;
+            transform: translateY(53%);
+        }
+    }
+
+    &._run-anim {
+        .baner-anim__lay-list {
+            opacity: 1;
+            transform: translateY(0) rotate(0deg);
+            transition: transform 0.5s ease 0.5s, opacity 0.3s ease 0.5s;
+        }
+        .baner-anim__lay {
+            transform: translateY(0%);
+            transition: transform 1s ease 0.5s;
+        }
+    }
+}

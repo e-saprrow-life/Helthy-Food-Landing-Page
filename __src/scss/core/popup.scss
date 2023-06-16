@@ -1,0 +1,28 @@
+//--- Popups ---
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(50, 50, 50, 0.8);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 100;
+
+    &__inner {
+        height: 100%;
+        padding: 100px 0;
+        background-color: rgba(50, 50, 50, 0.5);
+    }
+
+    &__btn-close {
+       
+    }
+}
+
+.popup._open {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity $transition;
+}

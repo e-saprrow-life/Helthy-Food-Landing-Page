@@ -1,0 +1,85 @@
+.footer {
+    $footerColor: rgba(255, 255, 255, 0.70);
+    background-color: #252525;
+    color: $footerColor;
+    a,a:visited {
+        color: $footerColor;
+        transition: color $transition;
+        &:hover {
+            color: #ffffff;
+            transition: color $transition;
+        }
+    }
+    // .footer__inner
+    &__inner {
+        @include responsiveValue(padding-top, 137, 70, 3);
+        @include responsiveValue(padding-bottom, 104, 50, 3);
+        display: flex;
+        @media (max-width: $md2 + px) {
+            justify-content: center;
+        }
+    }
+
+    // .footer__grid
+    &__grid {
+        flex: 0 0 $col12;
+        @media (max-width: $md2 + px) {
+            flex: 0 0 $col8;
+        }
+        @media (max-width: $md3 + px) {
+            flex: 0 0 $col6;
+            text-align: center;
+        }
+        margin: -15px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    // .footer__grid-item
+    &__grid-item {
+        flex: 0 0 $col3;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        @media (max-width: $md2 + px) {
+            flex: 0 0 $col6;
+            margin-bottom: 30px;
+        }
+        @media (max-width: $md3 + px) {
+            flex: 0 0 $col12;
+        }
+    }
+}
+
+
+.footer-menu {
+    // .footer-menu__title
+    &__title {
+        font-family: $fontFamily2;
+        font-size: rem(18);
+        color: #ffffff;
+        @include responsiveValue(margin-bottom, 26, 20, 3);
+    }
+    // .footer-menu__list
+    &__list {
+    }
+    // .footer-menu__list-item
+    &__list-item {
+        @include responsiveValue(margin-bottom, 20, 15, 3);
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .logo-link {
+        display: inline-block;
+    }
+    &__social-links {
+        img {
+            display: inline-block;
+            height: 21px;
+            width: 21px;
+            object-fit: contain;
+            object-position: center;
+            @include responsiveValue( margin-right, 10, 5, 3);
+        }
+    }
+}

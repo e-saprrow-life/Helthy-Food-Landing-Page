@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.html',{
+      'title':'Healthy Food',
+'description': 'hello world',
+   'keywords': 'word-1, word-2,',
+      'image': ''
+}) 
+<body>
+	<div class="wrapper">
+        @@include('_header.html')
+        
+		<main class="page"><!-- MAIN -->
+            @@include('_baner.html')
+            @@include('_features.html')
+            @@include('_about.html')
+            @@include('_menu.html')
+            @@include('_take-away.html')
+            @@include('_feedbacks.html')
+            @@include('_contacts.html')
+		</main> <!-- / MAIN -->
+        @@include('_footer.html')
+	</div><!-- END WRAPPER -->
+
+<!-- @@include('html/_popups.html') -->
+@@include('html/_svg.html')
+@@include('html/_scripts.html')
+</body>
+</html>

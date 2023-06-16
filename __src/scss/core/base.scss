@@ -1,0 +1,22 @@
+/*=== Шаблоны =======================================================================================================================*/
+%absolute-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+%img-full-cover-center {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+%img-full-contain-center {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+}

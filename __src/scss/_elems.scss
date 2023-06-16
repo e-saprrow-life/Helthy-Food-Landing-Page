@@ -1,0 +1,214 @@
+/* Кнопки */
+.btn {
+    display: inline-block;
+    background-color: $themeColor;
+    cursor: pointer;
+    color: #ffffff;
+    transition: background-color $transition;
+    a,a:visited {color: #ffffff;}
+    @include responsiveValue(border-radius, 5, 3, 3);
+    &:hover {
+        background-color: $themeColorHover;
+        transition: background-color $transition;
+    }
+
+    &_light { //== Светлая кнопка
+        background-color: #ffffff;
+        border: 1px solid rgba(220, 120, 11, 0.1);
+        color: $themeColor;
+        transition: border $transition;
+        a,a:visited {color: $themeColor;}
+        &:hover {
+            border: 1px solid rgba(220, 120, 11, 1);
+            transition: border $transition;
+            background-color: #ffffff;
+        }
+    }
+
+    &_small {
+        @include responsiveValue(min-width, 142, 100, 3);
+        @include responsiveValue(padding-top, 13, 10, 3);
+        @include responsiveValue(padding-bottom, 13, 10, 3);
+        @include responsiveValue(padding-right, 30, 20, 3);
+        @include responsiveValue(padding-left, 30, 20, 3);
+    }
+    &_big {
+        @include responsiveValue(padding-top, 20, 15, 3);
+        @include responsiveValue(padding-bottom, 20, 15, 3);
+        @include responsiveValue(padding-right, 40, 25, 3);
+        @include responsiveValue(padding-left, 40, 25, 3);
+    }
+
+    &_form {
+        @include responsiveValue(padding-top, 28.5, 20, 3);
+        @include responsiveValue(padding-bottom, 28.5, 20, 3);
+        @include responsiveValue(padding-right, 58, 40, 3);
+        @include responsiveValue(padding-left, 58, 40, 3);
+        font-size: rem(18);
+        line-height: 1;
+    }
+
+    &_store {
+        color: $mainColor;
+        transition: $transition;
+        background-color: #ffffff;
+        border: 1px solid rgba(220, 120, 11, 0.1);
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        a,a:visited {
+            display: inline-flex;
+            align-items: center;
+            color: $mainColor;
+        }
+        img {
+           @include responsiveValue(height, 26, 20, 3); 
+           @include responsiveValue(width, 26, 20, 3); 
+           @include responsiveValue(margin-right, 5, 3, 3); 
+        }
+        &:hover {
+            a,a:visited {
+                color: #ffffff;
+            }
+            color: #ffffff;
+            background-color: $mainColor;
+            transition: $transition;
+        }
+    }
+}
+
+
+
+
+
+//--- Burger menu -----
+.burger {
+    flex: 0 0 auto;
+    display: block;
+    position: relative;
+    //top: 10px;
+    //right: 10px;
+    height: 20px;
+    width: 30px;
+    cursor: pointer;
+    @media (min-width: $md3 + px) {
+        display: none;
+    }   
+    span {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: $themeTextColor;
+    }
+
+    span:nth-child(1) {
+        top: 0%;
+        transform: rotate(0deg);
+        transition: transform $transition, top $transition_delay, color 1.2s ease 0s;
+                    
+    }
+
+    span:nth-child(2) {
+        top: calc(50%);
+        transform: translateY(-50%);
+        opacity: 1;
+        transition: opacity $transition_delay, color 1.2s ease 0s;
+    }
+
+    span:nth-child(3) {
+        top: 100%;
+        transform: rotate(0deg) translateY(-100%);
+        transition: transform $transition, top $transition_delay, color 1.2s ease 0s;
+    }
+}
+
+.burger._open {
+    span { background-color: #ffffff;}
+    span:nth-child(1) {
+        top: 50%;
+        transform: rotate(45deg);
+        transition: top $transition, transform $transition_delay, color 1.2s ease 0s;
+    }
+
+    span:nth-child(2) {
+        top: 50%;
+        opacity: 0;
+        transition: opacity $transition, color 1.2s ease 0s;
+    }
+    
+    span:nth-child(3) {
+        top: 50%;
+        transform: rotate(-45deg);
+        transition: top $transition, transform $transition_delay, color 1.2s ease 0s;
+    }
+}
+
+
+.block {
+    &__inner {
+        @include responsiveValue(padding-top, 60, 40, 3);
+        @include responsiveValue(padding-bottom, 60, 40, 3);
+    }
+
+    &__header {
+        display: flex;
+        justify-content: center;
+        &_center {
+            text-align: center;
+            padding: 0 15px;
+            @media (max-width: $md3 + px) {
+                padding: 0;
+            }
+        }
+    }
+    &__header-inner {
+        flex: 0 0 $col8;
+        @media (max-width: $md3 + px) {
+            flex: 0 0 $col12;
+        }
+    }
+
+    &__name {
+        font-weight: 500;
+        color: $themeColor;
+        text-transform: uppercase;
+        @include responsiveValue(margin-bottom, 9, 5, 3);
+    }
+
+    &__title {
+        font-family: $fontFamily2;
+        font-size: rem(31.25);
+        font-weight: 700;
+    }
+
+    &__header-text {
+        @include responsiveValue(margin-top, 25, 15, 3);
+        display: flex;
+        justify-content: center;
+        line-height: 1.5;
+        p {
+            @media (min-width: $md3 + px) {
+                flex: 0 0 $col8;
+            }
+        }
+    }
+    //&__subtitle {}
+    &__text {
+        color: $textCol1;
+        line-height: 1.5;
+    }
+}
+
+
+
+
+.rate {
+    display: flex;
+    svg {
+        height: 16px;
+        width: 16px;
+        fill: #EDEDED;
+        margin-left: 3px;
+    }
+}

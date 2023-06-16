@@ -1,0 +1,101 @@
+.about {
+    position: relative;
+    &:before {
+        content: '';
+        display: block;
+        @extend %absolute-full;
+        width: 50%;
+        background-image: url('../img/about_us_decor.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: left;
+        transform: rotate(90deg) translateY(25%) scale(1.2);
+    }
+    // .about__inner
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: $md3 + px) {
+            flex-direction: column;
+        }
+    }
+
+    // .about__image-wrap
+    &__image-wrap {
+        @media (min-width: $md3 + px) {
+            flex: 0 0 $col6;
+        }
+        @media (max-width: $md3 + px) {
+            @include responsiveValue(margin-bottom, 30, 20, 3);
+        }
+    }
+
+    // .about__image-inner
+    &__image-inner {
+        padding-top: 90%;
+        position: relative;
+    }
+
+    // .about__image
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        @include responsiveValue(border-radius, 35, 25, 3);
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    // .about__content
+
+    &__content {
+        @media (min-width: $md3 + px) {
+            flex: 0 0 $col5;
+        }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    // .about__b-name
+
+    &__b-name {
+        @include responsiveValue(margin-bottom, 10, 8, 3);
+        @media (max-width: $md3 + px) {
+            text-align: center;
+        }
+    }
+
+    // .about__b-title
+
+    &__b-title {
+        @include responsiveValue(margin-bottom, 30, 20, 3);
+        @media (max-width: $md3 + px) {
+            text-align: center;
+        }
+    }
+
+    // .about__text
+
+    &__text {
+        @include responsiveValue(margin-bottom, 30, 20, 3);
+        @media (max-width: $md3 + px) {
+            text-align: center;
+        }
+    }
+
+    // .about__btn-wrap
+
+    &__btn-wrap {
+        @media (max-width: $md3 + px) {
+            text-align: center;
+        }
+    }
+}
